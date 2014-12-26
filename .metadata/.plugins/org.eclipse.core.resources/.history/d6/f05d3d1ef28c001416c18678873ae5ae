@@ -15,7 +15,7 @@ public class Money {
 		double initialValue, total, interestRate;
 		
 		initialValue = 10;
-		interestRate = .3;
+		interestRate = .14;
 		
 		total = initialValue + initialValue * interestRate;
 		
