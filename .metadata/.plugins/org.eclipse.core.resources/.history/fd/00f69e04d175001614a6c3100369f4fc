@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+
+public class J4v1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	
+		System.out.println("NOD & NOK from array faster");
+		int nod, nok, n;
+		int[] nums;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Input number of nums: ");
+		n = sc.nextInt();
+		nums = new int[n];
+		
+		nod = gcd(nums[0], nums[1]);
+		nok = lcm(nums[0], nums[1]);
+		for (int i = 2; i < nums.length; i++){
+			nod = gcd(nod, nums[i]);
+			nok = lcm(nok, nums[i]);
+		}
+		
+		System.out.print("NOD = " + nod);
+		System.out.print("NOK = " + nok);
+			
+	}
+	
+	static int gcd(int a, int b){
+		return b == 0 ? a : gcd(b, a %b);
+	}
+	
+	static int lcm(int a, int b){
+		return a / gcd(a, b) * b;
+	}
+	
+
+}
